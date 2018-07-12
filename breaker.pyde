@@ -1,7 +1,7 @@
 xCoordinate = 400
-speed = 8
-yCoordinate = 655
-yspeed = 8
+speed = 4
+yCoordinate = 200
+yspeed = 4
 red = random (0, 255)
 green = random(0,255)
 blue = random(0, 255)
@@ -9,6 +9,8 @@ side = 800
 breadth = 700
 ellipseSize = 30
 rectCoordX = 340
+
+
 
 
 
@@ -32,14 +34,24 @@ def draw():
     global yCoordinate1, rectCoordX
     background(0)
     
-    rect(0, 0, 130, 30)
-    rect(130, 0, 133, 30)
-    rect(260, 0, 133, 30)
-    rect(390, 0, 133, 30)
-    rect(520, 0, 133, 30)
-    rect(650, 0, 133, 30)
+    rect(0, 0, 147, 30)
+    rect(130, 0, 147, 30)
+    rect(260, 0, 147, 30)
+    rect(390, 0, 147, 30)
+    rect(520, 0, 147, 30)
+    rect(650, 0, 149, 30)
+    
+    rect(60, 30, 147, 30)
+    rect(190, 30, 147, 30)
+    rect(320, 30, 147, 30)
+    rect(450, 30, 147, 30)
+    rect(580, 30, 147, 30)
+    
+   
+    
     topBoundary = ellipseSize / 2
     bottomBoundary = breadth - ellipseSize / 2
+    layer2 = 60
     
     leftBoundary = ellipseSize / 2
     rightBoundary = side - ellipseSize / 2
@@ -52,14 +64,10 @@ def draw():
     
     if xCoordinate >= rightBoundary or xCoordinate <= leftBoundary:
         speed = -speed
-        red = random(255)
-        green = random(255)
-        blue = random(255)
-    if yCoordinate >= bottomBoundary or yCoordinate <= topBoundary:
+    if yCoordinate == layer2 or yCoordinate <= topBoundary:
         yspeed = -yspeed
-        red += random(255)
-        green += random(255)
-        blue += random(255)
+    if (yCoordinate >= 645 and yCoordinate <= 665) or yCoordinate <= topBoundary:
+        yspeed = -yspeed
     
     fill(255)
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
