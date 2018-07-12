@@ -34,18 +34,7 @@ def draw():
     global yCoordinate1, rectCoordX
     background(0)
     
-    rect(0, 0, 147, 30)
-    rect(130, 0, 147, 30)
-    rect(260, 0, 147, 30)
-    rect(390, 0, 147, 30)
-    rect(520, 0, 147, 30)
-    rect(650, 0, 149, 30)
-    
-    rect(60, 30, 147, 30)
-    rect(190, 30, 147, 30)
-    rect(320, 30, 147, 30)
-    rect(450, 30, 147, 30)
-    rect(580, 30, 147, 30)
+   
     
    
     
@@ -68,17 +57,25 @@ def draw():
         yspeed = -yspeed
     if (yCoordinate >= 645 and yCoordinate <= 665) or yCoordinate <= topBoundary:
         yspeed = -yspeed
+    elif yCoordinate >= bottomBoundary or yCoordinate <= topBoundary:
+        speed = speed
+    
+    rect(0, 0, 147, 30)
+    rect(130, 0, 147, 30)
+    rect(260, 0, 147, 30)
+    rect(390, 0, 147, 30)
+    rect(520, 0, 147, 30)
+    rect(650, 0, 149, 30)
+    
+
     
     fill(255)
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
     
     
-    def mouseDragged():
-        global rectCoordX
-    if mouseX >= 340:
-        rect(pmouseX, 650, 130, 30)
-    else:
-        rect(pmouseX, 650, 130, 30)
+
+    rect(pmouseX, 650, 130, 30)
+
 
            
     
