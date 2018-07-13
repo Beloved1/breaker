@@ -51,7 +51,7 @@ def draw():
     if yCoordinate <= topBoundary:
         yspeed = -yspeed
     
-    
+    #brick draw
     if brick1:
         rect(0, 0, 100, 30)
     if brick2:
@@ -68,8 +68,12 @@ def draw():
         rect(600, 0, 100, 30)
     if brick8:
         rect(700, 0, 100, 30)
+        
+    #paddle position
     if paddle:
         rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
+    
+    #brick break
     if yCoordinate <= 30: 
         if brick1 and xCoordinate <100:
             brick1 = False
@@ -91,7 +95,7 @@ def draw():
             yspeed = -yspeed
         
         
-        
+    #ball
     fill(255)
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
     
