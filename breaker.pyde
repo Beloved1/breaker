@@ -99,8 +99,10 @@ def draw():
     fill(255)
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
     
-    if brick1 == False and brick2 == False and brick3 == False and brick4 == False and brick5 == False and brick6 == False:
+    if brick1 == False and brick2 == False and brick3 == False and brick4 == False and brick5 == False and brick6 == False and brick7 == False and brick8 == False:
         text("Level Cleared", 340, 350)
+    if yCoordinate >665:
+        text("GAME OVER", 340, 350)
     
     
 
