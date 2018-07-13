@@ -1,7 +1,7 @@
 xCoordinate = 400
-speed = 4
+speed = -8
 yCoordinate = 200
-yspeed = 4
+yspeed = -8
 red = random (0, 255)
 green = random(0,255)
 blue = random(0, 255)
@@ -10,6 +10,13 @@ breadth = 700
 ellipseSize = 30
 rectCoordX = 340
 
+brick1 = True
+brick2 = True
+brick3 = True
+brick4 = True
+brick5 = True
+brick6 = True
+platform = True
 
 
 
@@ -31,7 +38,7 @@ def setup():
 def draw():
 
     global xCoordinate, speed, yspeed, yCoordinate, red, green, blue, ellipseSize, xCoordinate1, speed1, yspeed1
-    global yCoordinate1, rectCoordX
+    global yCoordinate1, rectCoordX, brick1, brick2, brick3, brick4, brick5, brick6
     background(0)
     
    
@@ -53,28 +60,55 @@ def draw():
     
     if xCoordinate >= rightBoundary or xCoordinate <= leftBoundary:
         speed = -speed
-    if yCoordinate == layer2 or yCoordinate <= topBoundary:
+    if yCoordinate <= topBoundary:
         yspeed = -yspeed
-    if (yCoordinate >= 645 and yCoordinate <= 665) or yCoordinate <= topBoundary:
+    else:
+        yspeed = yspeed
+    if xCoordinate == pmouseX:
         yspeed = -yspeed
-    elif yCoordinate >= bottomBoundary or yCoordinate <= topBoundary:
-        speed = speed
     
-    rect(0, 0, 147, 30)
-    rect(130, 0, 147, 30)
-    rect(260, 0, 147, 30)
-    rect(390, 0, 147, 30)
-    rect(520, 0, 147, 30)
-    rect(650, 0, 149, 30)
     
-
-    
+    if brick1:
+        rect(0, 0, 147, 30)
+    if brick2:
+        rect(130, 0, 147, 30)
+    if brick3:
+        rect(260, 0, 147, 30)
+    if brick4:
+        rect(390, 0, 147, 30)
+    if brick5:
+        rect(520, 0, 147, 30)
+    if brick6:
+        rect(650, 0, 149, 30)
+    if platform:
+        rect(pmouseX, 650, 130, 30)
+    if yCoordinate <= 30: 
+        if brick1 and xCoordinate <=147:
+            brick1 = False
+        elif brick2 and xCoordinate>147 and xCoordinate <= 294:
+            brick2 = False
+        elif brick3 and xCoordinate>294 and xCoordinate <= 420:
+            brick3 = False
+        elif brick4 and xCoordinate>420 and xCoordinate <= 588:
+            brick4 = False
+        elif brick5 and xCoordinate>588 and xCoordinate <= 735:
+            brick5 = False
+        elif brick6 and xCoordinate>735 and xCoordinate <= 882:
+            brick6 = False
+        if platform and (xCoordinate >=  pmouseX or xCoordinate <= pmouseX) and yCoordinate == 680:
+            yspeed = -yspeed
+        
+        
+        
     fill(255)
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
     
+    if brick1 == False and brick2 == False and brick3 == False and brick4 == False and brick5 == False and brick6 == False:
+        print("GAME OVER")
+    
     
 
-    rect(pmouseX, 650, 130, 30)
+   
 
 
            
