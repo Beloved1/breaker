@@ -65,10 +65,10 @@ def draw():
         fill(0,205,0)
         rect(300, 0, 100, 30)
     if brick5:
-        fill(255,0,0)
+        fill(255,255,0)
         rect(400, 0, 100, 30)
     if brick6:
-        fill(255,0,0)
+        fill(94,38,18)
         rect(500, 0, 100, 30)
     if brick7:
         fill(192,255,62)
