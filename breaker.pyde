@@ -1,10 +1,7 @@
 xCoordinate = 400
 speed = -8
-yCoordinate = 200
+yCoordinate = 650
 yspeed = -8
-red = random (0, 255)
-green = random(0,255)
-blue = random(0, 255)
 side = 800
 breadth = 700
 ellipseSize = 30
@@ -17,15 +14,6 @@ brick4 = True
 brick5 = True
 brick6 = True
 platform = True
-
-
-
-
-xCoordinate1 = 785
-yCoordinate1 = 685
-speed1 = 5
-yspeed1 = 5
-
 
 
 
@@ -54,17 +42,11 @@ def draw():
     
     xCoordinate += speed
     yCoordinate += yspeed
-    xCoordinate1 -= speed1
-    yCoordinate1 -= yspeed1
     
     
     if xCoordinate >= rightBoundary or xCoordinate <= leftBoundary:
         speed = -speed
     if yCoordinate <= topBoundary:
-        yspeed = -yspeed
-    else:
-        yspeed = yspeed
-    if xCoordinate == pmouseX:
         yspeed = -yspeed
     
     
@@ -81,7 +63,7 @@ def draw():
     if brick6:
         rect(650, 0, 149, 30)
     if platform:
-        rect(pmouseX, 650, 130, 30)
+        rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
     if yCoordinate <= 30: 
         if brick1 and xCoordinate <=147:
             brick1 = False
@@ -95,7 +77,7 @@ def draw():
             brick5 = False
         elif brick6 and xCoordinate>735 and xCoordinate <= 882:
             brick6 = False
-        if platform and (xCoordinate >=  pmouseX or xCoordinate <= pmouseX) and yCoordinate == 680:
+    if platform and (xCoordinate >=  mouseX and xCoordinate <= mouseX+130) and (yCoordinate >= 635 and yCoordinate <= 665):
             yspeed = -yspeed
         
         
