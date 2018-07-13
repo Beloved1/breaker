@@ -13,6 +13,8 @@ brick3 = True
 brick4 = True
 brick5 = True
 brick6 = True
+brick7 = True
+brick8 = True
 paddle = True
 
 
@@ -26,7 +28,7 @@ def setup():
 def draw():
 
     global xCoordinate, speed, yspeed, yCoordinate, red, green, blue, ellipseSize, xCoordinate1, speed1, yspeed1
-    global yCoordinate1, rectCoordX, brick1, brick2, brick3, brick4, brick5, brick6
+    global yCoordinate1, rectCoordX, brick1, brick2, brick3, brick4, brick5, brick6, brick7, brick8
     background(0)
     
    
@@ -51,32 +53,40 @@ def draw():
     
     
     if brick1:
-        rect(0, 0, 147, 30)
+        rect(0, 0, 100, 30)
     if brick2:
-        rect(130, 0, 147, 30)
+        rect(100, 0, 100, 30)
     if brick3:
-        rect(260, 0, 147, 30)
+        rect(200, 0, 100, 30)
     if brick4:
-        rect(390, 0, 147, 30)
+        rect(300, 0, 100, 30)
     if brick5:
-        rect(520, 0, 147, 30)
+        rect(400, 0, 100, 30)
     if brick6:
-        rect(650, 0, 149, 30)
+        rect(500, 0, 100, 30)
+    if brick7:
+        rect(600, 0, 100, 30)
+    if brick8:
+        rect(700, 0, 100, 30)
     if paddle:
         rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
     if yCoordinate <= 30: 
-        if brick1 and xCoordinate <=147:
+        if brick1 and xCoordinate <100:
             brick1 = False
-        elif brick2 and xCoordinate>147 and xCoordinate <= 294:
+        elif brick2 and xCoordinate>= 100 and xCoordinate < 200:
             brick2 = False
-        elif brick3 and xCoordinate>294 and xCoordinate <= 420:
+        elif brick3 and xCoordinate>= 200 and xCoordinate < 300:
             brick3 = False
-        elif brick4 and xCoordinate>420 and xCoordinate <= 588:
+        elif brick4 and xCoordinate>= 300 and xCoordinate < 400:
             brick4 = False
-        elif brick5 and xCoordinate>588 and xCoordinate <= 735:
+        elif brick5 and xCoordinate>= 400 and xCoordinate <= 500:
             brick5 = False
-        elif brick6 and xCoordinate>735 and xCoordinate <= 882:
+        elif brick6 and xCoordinate>= 500 and xCoordinate < 600:
             brick6 = False
+        elif brick7 and xCoordinate>= 600 and xCoordinate < 700:
+            brick7 = False
+        elif brick8 and xCoordinate>= 700 and xCoordinate < 800:
+            brick8 = False
     if paddle and (xCoordinate >=  mouseX and xCoordinate <= mouseX+130) and (yCoordinate >= 635 and yCoordinate <= 665):
             yspeed = -yspeed
         
@@ -86,7 +96,7 @@ def draw():
     ellipse(xCoordinate, yCoordinate, ellipseSize, ellipseSize)
     
     if brick1 == False and brick2 == False and brick3 == False and brick4 == False and brick5 == False and brick6 == False:
-        print("GAME OVER")
+        text("Level Cleared", 340, 350)
     
     
 
