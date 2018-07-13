@@ -79,7 +79,7 @@ def draw():
         
     #paddle position
     if paddle:
-        fill(0,0,255)
+        fill(125,38,205)
         rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
     
     #brick break
