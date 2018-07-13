@@ -13,7 +13,7 @@ brick3 = True
 brick4 = True
 brick5 = True
 brick6 = True
-platform = True
+paddle = True
 
 
 
@@ -62,7 +62,7 @@ def draw():
         rect(520, 0, 147, 30)
     if brick6:
         rect(650, 0, 149, 30)
-    if platform:
+    if paddle:
         rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
     if yCoordinate <= 30: 
         if brick1 and xCoordinate <=147:
@@ -77,7 +77,7 @@ def draw():
             brick5 = False
         elif brick6 and xCoordinate>735 and xCoordinate <= 882:
             brick6 = False
-    if platform and (xCoordinate >=  mouseX and xCoordinate <= mouseX+130) and (yCoordinate >= 635 and yCoordinate <= 665):
+    if paddle and (xCoordinate >=  mouseX and xCoordinate <= mouseX+130) and (yCoordinate >= 635 and yCoordinate <= 665):
             yspeed = -yspeed
         
         
