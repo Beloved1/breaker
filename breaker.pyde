@@ -29,7 +29,7 @@ def draw():
 
     global xCoordinate, speed, yspeed, yCoordinate, red, green, blue, ellipseSize, xCoordinate1, speed1, yspeed1
     global yCoordinate1, rectCoordX, brick1, brick2, brick3, brick4, brick5, brick6, brick7, brick8
-    background(0)
+    background(0,0,255)
     
    
     
@@ -53,24 +53,33 @@ def draw():
     
     #brick draw
     if brick1:
+        fill(255,0,0)
         rect(0, 0, 100, 30)
     if brick2:
+        fill(205,16,118)
         rect(100, 0, 100, 30)
     if brick3:
+        fill(34,139,34)
         rect(200, 0, 100, 30)
     if brick4:
+        fill(0,205,0)
         rect(300, 0, 100, 30)
     if brick5:
+        fill(255,0,0)
         rect(400, 0, 100, 30)
     if brick6:
+        fill(255,0,0)
         rect(500, 0, 100, 30)
     if brick7:
+        fill(192,255,62)
         rect(600, 0, 100, 30)
     if brick8:
+        fill(55,246,143)
         rect(700, 0, 100, 30)
         
     #paddle position
     if paddle:
+        fill(0,0,255)
         rect(mouseX, 650, 130, 30, 100, 100, 100, 100)
     
     #brick break
